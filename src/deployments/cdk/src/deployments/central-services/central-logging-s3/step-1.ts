@@ -144,7 +144,7 @@ async function cwlSettingsInLogArchive(props: {
     statements: [
       new iam.PolicyStatement({
         effect: iam.Effect.ALLOW,
-        principals: [new iam.AnyPrincipal()],
+        principals: [new iam.StarPrincipal()],
         actions: ['logs:PutSubscriptionFilter'],
         resources: [`arn:aws:logs:${cdk.Aws.REGION}:${cdk.Aws.ACCOUNT_ID}:destination:${destinationName}`],
         conditions: {
